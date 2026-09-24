@@ -35,23 +35,6 @@ jobs:
       - name: Build with Maven
         run: mvn clean package -DskipTests
 
-
-
-  # ==========================================
-  # CD - Docker Hub + EC2 Deployment
-  # ==========================================
-  deploy:
-    name: Deploy to EC2
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-
-      # Checkout code
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-
       # ==========================================
       # Login to Docker Hub
       # ==========================================
@@ -113,3 +96,5 @@ jobs:
 
             # Show running containers
             docker ps
+
+
