@@ -94,14 +94,14 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/deploy:latest
 
             # Stop old container if running
-            docker stop demp-app || true
+            docker stop demo-app || true
 
             # Remove old container
-            docker rm demp-app || true
+            docker rm demo-app || true
 
             # Start new container
             docker run -d \
-              --name demp-app \
+              --name demo-app \
               -p 9090:8080 \
               --restart unless-stopped \
               ${{ secrets.DOCKERHUB_USERNAME }}/deploy:latest
