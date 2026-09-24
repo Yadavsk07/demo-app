@@ -12,7 +12,7 @@ public class welcome {
     @GetMapping
     public ResponseEntity<String> message()
     {
-        String message = "Welcome to my project";
+        String message = "Welcome to my Springboot project";
         return ResponseEntity.ok(message);
     }
 }
